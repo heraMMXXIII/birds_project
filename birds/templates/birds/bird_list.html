@@ -1,27 +1,48 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Птицы</title>
-    <link rel="stylesheet" href="{% static 'birds/css/styles.css' %}">
-</head>
-<body>
-    <h1>Список птиц</h1>
-    <div class="card-container">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Птичий дом</title>
+    <link rel="stylesheet" href="{% static 'birds/css/styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header
+      style="
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(60, 81, 72, 1);
+      "
+    >
+      <img src="{% static 'birds/img/logo.svg' %}" alt="logo" />
+      <h1 style="color: rgba(201, 180, 161, 1)">ПТИЧИЙ ДОМ</h1>
+      <a href="/admin">
+        <img src="{% static 'birds/img/add.svg' %}" alt="add" />
+      </a>
+    </header>
+    <main>
+      <div class="card-container">
         {% for bird in birds %}
-            <div class="bird-card">
-                <img src="{{ bird.image.url }}" alt="{{ bird.name }}">
-                <h2>{{ bird.name }}</h2>
-                {% if bird.sound %}
-                    <audio controls>
-                        <source src="{{ bird.sound.url }}" type="audio/mpeg">
-                        Ваш браузер не поддерживает аудио.
-                    </audio>
-                {% endif %}
-                <a href="{{ bird.wiki_link }}" target="_blank">Подробнее</a>
-            </div>
+        <div class="bird-card">
+          <img src="{{ bird.image.url }}" alt="{{ bird.name }}" />
+          <h2>{{ bird.name }}</h2>
+          {% if bird.sound %}
+          <audio controls>
+            <source src="{{ bird.sound.url }}" type="audio/mpeg" />
+            Ваш браузер не поддерживает аудио.
+          </audio>
+          {% endif %}
+          <a href="{{ bird.wiki_link }}" target="_blank">О птице</a>
+        </div>
         {% endfor %}
-    </div>
-</body>
+      </div>
+    </main>
+  </body>
 </html>
