@@ -1,0 +1,57 @@
+/* static/birds/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.bird-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.bird-card img {
+    width: 100%;
+    height: auto;
+}
+
+.bird-card h2 {
+    margin: 10px 0;
+    color: #444;
+}
+
+.bird-card audio {
+    margin: 10px 0;
+}
+
+.bird-card a {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.bird-card a:hover {
+    background-color: #0056b3;
+}

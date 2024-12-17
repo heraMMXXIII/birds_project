@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Птицы</title>
+    <link rel="stylesheet" href="{% static 'birds/css/styles.css' %}">
+</head>
+<body>
+    <h1>Список птиц</h1>
+    <div class="card-container">
+        {% for bird in birds %}
+            <div class="bird-card">
+                <img src="{{ bird.image.url }}" alt="{{ bird.name }}">
+                <h2>{{ bird.name }}</h2>
+                {% if bird.sound %}
+                    <audio controls>
+                        <source src="{{ bird.sound.url }}" type="audio/mpeg">
+                        Ваш браузер не поддерживает аудио.
+                    </audio>
+                {% endif %}
+                <a href="{{ bird.wiki_link }}" target="_blank">Подробнее</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
