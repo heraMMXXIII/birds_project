@@ -1,0 +1,7 @@
+[build]
+  command = "python manage.py collectstatic --noinput"
+  publish = "birds_project"
+
+
+[functions]
+  directory = "birds_project/functions"
